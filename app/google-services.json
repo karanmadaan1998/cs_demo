@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "943153245569",
-    "firebase_url": "https://phoneauth-ccdf9.firebaseio.com",
-    "project_id": "phoneauth-ccdf9",
-    "storage_bucket": "phoneauth-ccdf9.appspot.com"
+    "project_number": "634454157248",
+    "firebase_url": "https://cs-demo-8fa40.firebaseio.com",
+    "project_id": "cs-demo-8fa40",
+    "storage_bucket": "cs-demo-8fa40.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:943153245569:android:a1aac19e78679cdaea0c80",
+        "mobilesdk_app_id": "1:634454157248:android:b0827bb0e79601b2c3ca25",
         "android_client_info": {
-          "package_name": "com.example.phonenoauth"
+          "package_name": "com.example.cs_demo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "943153245569-oou48v99vcqm9bpg0obsvmgtehghau19.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.phonenoauth",
-            "certificate_hash": "3cf2240861c997ad65f2a6e5cfa4a309606585bd"
-          }
-        },
-        {
-          "client_id": "943153245569-7be6mjs00uq349sq29kdajrduvto3hng.apps.googleusercontent.com",
+          "client_id": "634454157248-p2upsdj85jlrg22tcj724ma765b8rded.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBVx8M7gFqjrapF01tyvudBv7w4XGXZ5JE"
+          "current_key": "AIzaSyDWpw3GGQNGjdV8qCmXPkZblUHM3W_BiUE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "943153245569-7be6mjs00uq349sq29kdajrduvto3hng.apps.googleusercontent.com",
+              "client_id": "634454157248-p2upsdj85jlrg22tcj724ma765b8rded.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

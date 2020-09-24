@@ -1,15 +1,15 @@
 package com.example.cs_demo;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -25,23 +25,21 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class Login_signup extends AppCompatActivity {
+class Logingmail extends AppCompatActivity {
     private SignInButton signInButton;
     private GoogleSignInClient googleSignInClient;
     private String TAG="mainTag";
     private FirebaseAuth mAuth;
-    Button b1;
 
     private int RESULT_CODE_SINGIN=999;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_signup);
+        //setContentView(R.layout.activity_login_signup);
         signInButton = findViewById(R.id.SignIn_Button);
         mAuth = FirebaseAuth.getInstance();
 
-b1=findViewById(R.id.button_first);
+
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -69,10 +67,7 @@ b1=findViewById(R.id.button_first);
     //when the signIn Button is clicked then start the signIn Intent
     private void signInM() {
         Intent singInIntent = googleSignInClient.getSignInIntent();
-        Intent i=new Intent(Login_signup.this,MainActivity.class);
         startActivityForResult(singInIntent,RESULT_CODE_SINGIN);
-        //Intent singInIntent = googleSignInClient.getSignInIntent();
-        //startActivityForResult(singInIntent,RESULT_CODE_SINGIN);
     }
 
     // onActivityResult (Here we handle the result of the Activity )
@@ -95,15 +90,14 @@ b1=findViewById(R.id.button_first);
         try {
             signInButton.setVisibility(View.INVISIBLE);
             GoogleSignInAccount account = task.getResult(ApiException.class);
-            Toast.makeText(Login_signup.this,"Signed In successfully",Toast.LENGTH_LONG).show();
+            Toast.makeText(Logingmail.this,"Signed In successfully",Toast.LENGTH_LONG).show();
             //SignIn successful now show authentication
-
             FirebaseGoogleAuth(account);
 
         } catch (ApiException e) {
             e.printStackTrace();
             Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
-            Toast.makeText(Login_signup.this,"SignIn Failed!!!",Toast.LENGTH_LONG).show();
+            Toast.makeText(Logingmail.this,"SignIn Failed!!!",Toast.LENGTH_LONG).show();
             FirebaseGoogleAuth(null);
         }
     }
@@ -116,12 +110,12 @@ b1=findViewById(R.id.button_first);
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(Login_signup.this,"successful",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Logingmail.this,"successful",Toast.LENGTH_LONG).show();
                     FirebaseUser firebaseUser = mAuth.getCurrentUser();
                     UpdateUI(firebaseUser);
                 }
                 else {
-                    Toast.makeText(Login_signup.this,"Failed!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Logingmail.this,"Failed!",Toast.LENGTH_LONG).show();
                     UpdateUI(null);
                 }
             }
@@ -140,25 +134,8 @@ b1=findViewById(R.id.button_first);
             String personEmail = account.getEmail();
             String personId = account.getId();
 
-            Toast.makeText(Login_signup.this,personName + "  " + personEmail, Toast.LENGTH_LONG).show();
-            Intent i =new Intent(Login_signup.this,MainActivity.class);
-            startActivity(i);
-
+            Toast.makeText(Logingmail.this,personName + "  " + personEmail, Toast.LENGTH_LONG).show();
         }
     }
-
-
-
-
-    public void otp(View view) {
-        Intent i=new Intent(Login_signup.this,Login.class);
-        startActivity(i);
-    }
-
-    public void guest(View view) {
-        Intent i=new Intent(Login_signup.this,MainActivity.class);
-        startActivity(i);
-    }
-
-
 }
+

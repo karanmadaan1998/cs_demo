@@ -23,24 +23,22 @@
         android:textAllCaps="false"
         android:textColor="#ffffff" />
 
-    <Button
-        android:id="@+id/gmail"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="24sp"
-      android:background="@drawable/buttondesign"
-        android:text="Login via Google"
-        android:onClick="gmail"
-        android:textAllCaps="false"
-        android:textColor="#ffffff" />
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/SignIn_Button"
+            android:layout_width="150dp"
+            android:text="Sign In"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28sp"
+            android:background="@drawable/buttondesign"
+           />
         <Button
             android:id="@+id/guest"
             android:layout_width="150dp"
             android:layout_marginTop="24sp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-android:onClick="guest"
+            android:onClick="guest"
             android:background="@drawable/buttondesign"
             android:text="Login as a guest"
             android:textAllCaps="false"

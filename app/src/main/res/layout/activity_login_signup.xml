@@ -30,8 +30,7 @@
 
             android:layout_height="wrap_content"
             android:layout_marginTop="28sp"
-            android:background="@drawable/buttondesign"
-           />
+            />
         <Button
             android:id="@+id/guest"
             android:layout_width="150dp"
